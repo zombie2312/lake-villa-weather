@@ -4,7 +4,6 @@ on:
   schedule:
     - cron: "23 * * * *"
   workflow_dispatch:
-  push:
 
 permissions:
   contents: write
@@ -29,7 +28,7 @@ jobs:
       - name: Keep the schedule alive
         # GitHub turns a public repository's schedules off after 60 days with no activity.
         run: |
-          if [ $(( $(date +%s) - $(git log -1 --format=%ct) )) -gt -1 ]; then
+          if [ $(( $(date +%s) - $(git log -1 --format=%ct) )) -gt 2592000 ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git commit --allow-empty -m "Keep the schedule alive"
