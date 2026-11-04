@@ -9,8 +9,8 @@ import time
 import urllib.parse
 import urllib.request
 
-LATITUDE = 39.09        # Lake Tahoe
-LONGITUDE = -120.04
+LATITUDE = 39.697693        # Lake Tahoe
+LONGITUDE = -76.063053
 TRIES = 3
 
 
